@@ -12,7 +12,7 @@ include $(DEVKITARM)/3ds_rules
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output
 # BUILD is the directory where object files & intermediate files will be placed
-# SOURCES is a list of directories containing source code
+# SOURCES is a list of directories containing src code
 # DATA is a list of directories containing data files
 # INCLUDES is a list of directories containing header files
 #

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#include "joystick.h"
+#include "joystick.hpp"
 
 int ContPovNumber;
 UINT iInterface = 1;

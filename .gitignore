@@ -8,3 +8,4 @@
 PC/build/
 PC/*.exe
 cmake-*
+.idea

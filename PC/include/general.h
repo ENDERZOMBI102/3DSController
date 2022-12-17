@@ -1,5 +1,5 @@
 #pragma once
 
-#include <stdio.h>
+#define VERSION 1.1
 
-void error(const char *functionName);
+void error( const char *functionName );

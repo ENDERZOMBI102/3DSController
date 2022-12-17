@@ -20,46 +20,27 @@ enum NET_COMMANDS {
 };
 
 // It is deliberately set up to have an anonymous struct as well as a named struct for convenience, not a mistake!
-struct packet {
-	struct packetHeader {
-		unsigned char command;
-		unsigned char keyboardActive;
-	};
-	struct packetHeader packetHeader;
-	
+struct Packet {
+	NET_COMMANDS command;
+	unsigned char keyboardActive;
+
 	union {
 		// CONNECT
-		struct connectPacket {
-		};
-		struct connectPacket connectPacket;
+		struct ConnectPacket { } connectPacket;
 		
 		// KEYS
-		struct keysPacket {
+		struct KeysPacket {
 			unsigned int keys;
-			
-			struct {
-				short x;
-				short y;
-			} circlePad;
-			
-			struct {
-				unsigned short x;
-				unsigned short y;
-			} touch;
-			
-			struct {
-				short x;
-				short y;
-			} cStick;
-		};
-		struct keysPacket keysPacket;
+			struct { short x; short y; } circlePad;
+			struct { unsigned short x; unsigned short y; } touch;
+			struct { short x; short y; } cStick;
+		} keysPacket;
 		
 		// SCREENSHOT
-		struct screenshotPacket {
+		struct ScreenshotPacket {
 			unsigned short offset;
 			unsigned char data[SCREENSHOT_CHUNK];
-		};
-		struct screenshotPacket screenshotPacket;
+		} screenshotPacket;
 	};
 };
 
@@ -70,7 +51,7 @@ extern struct sockaddr_in client_in;
 
 extern int sockaddr_in_sizePtr;
 
-extern struct packet buffer;
+extern struct Packet buffer;
 extern char hostName[80];
 
 void initNetwork(void);

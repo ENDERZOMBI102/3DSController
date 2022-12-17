@@ -6,7 +6,7 @@
 
 #include <windows.h>
 
-#include "public.h"
+#include "public.hpp"
 #include "vjoyinterface.h"
 
 #define joyX iReport.wAxisX

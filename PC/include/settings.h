@@ -2,25 +2,25 @@
 
 #include <stdbool.h>
 
-#include "keys.h"
+#include "keys.hpp"
 
-enum analogue {
+enum Analogue {
 	mouse,
 	joystick1,
 	joystick2,
 };
 
-struct settings {
+struct Settings {
 	int port;
 	int throttle;
-	enum analogue circlePad;
-	enum analogue cStick;
-	enum analogue touch;
+	enum Analogue circlePad;
+	enum Analogue cStick;
+	enum Analogue touch;
 	int mouseSpeed;
-	struct keyMapping A, B, X, Y, L, R, ZL, ZR, Left, Right, Up, Down, Start, Select, Tap;
+	struct KeyMapping A, B, X, Y, L, R, ZL, ZR, Left, Right, Up, Down, Start, Select, Tap;
 };
 
-extern struct settings settings;
-extern struct settings defaultSettings;
+extern struct Settings settings;
+extern struct Settings defaultSettings;
 
 bool readSettings(void);

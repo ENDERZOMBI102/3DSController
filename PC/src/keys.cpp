@@ -1,4 +1,4 @@
-#include "keys.h"
+#include "keys.hpp"
 
 // Sideband comunication with vJoy Device
 //{781EF630-72B2-11d2-B852-00C04FAD5101}
@@ -7,10 +7,10 @@ DEFINE_GUID(GUID_DEVINTERFACE_VJOY, 0x781EF630, 0x72B2, 0x11d2, 0xB8, 0x52, 0x00
 unsigned int lastKeys;
 unsigned int currentKeys;
 
-struct circlePad circlePad;
-struct cStick cStick;
-struct touch lastTouch;
-struct touch currentTouch;
+struct CirclePad circlePad;
+struct CStick cStick;
+struct Touch lastTouch;
+struct Touch currentTouch;
 
 inline unsigned int mapVirtualKey(unsigned int key) {
 	return MapVirtualKey(key, MAPVK_VK_TO_VSC);

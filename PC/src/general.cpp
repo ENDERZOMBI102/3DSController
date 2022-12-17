@@ -1,4 +1,5 @@
-#include "wireless.h"
+#include <cstdio>
+#include "wireless.hpp"
 
 #include "general.h"
 

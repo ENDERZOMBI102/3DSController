@@ -81,7 +81,7 @@ int main(void) {
 	gfxSwapBuffers();
 	
 	if(!readSettings()) {
-		hang("Could not read 3DSController.ini!");
+		hang("Could not read config.ini!");
 	}
 	
 	clearScreen();
